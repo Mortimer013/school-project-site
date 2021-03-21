@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title id="title"> s</title>
+        <script>
+            xs = document.getElementbyId("title")
+            var typed = new Typed(xs, {
+            strings: ["Made by Mortimer", "Made by xx776",
+        ],
+            typeSpeed: 50,
+            backSpeed: 50,
+
+        });
+        </script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://kit.fontawesome.com/788d0501de.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+</head>
+<body>
+    <div>
+        
+        <div id="header">
+            <h1> <span id="headline"></span></h1>
+                <script>
+                    var typed = new Typed("#headline", {
+                    strings: [    "YOU JUST GOT HACKED", "BAAAMMMBOOOZZZLLEEED", "DAMN SUCKS TO BE YOU", "Vorsicht im Internet!"
+                ],
+                    typeSpeed: 50,
+                    backSpeed: 50,
+        
+                });
+                </script>
+    
+            <div id="content"><p>Dies ist eine Testseite der Computer-AG. 
+                Der Nutzer, der sie betritt wurde nicht wirklich "gehackt", 
+                er ist NUR Opfer einer der verbreitetsten Betrugsmaschen im Internet geworden.
+                Sie haben sich in eine falsche Kopie des FG W-Lan eingeloggt. Auf diese Weise werden täglich Terrabytes an Daten gestohlen.
+                Also seien sie das nächste Mal!
+            </p>
+            <script>function updateVisitCount() {
+                fetch('https://api.countapi.xyz/update/FGCLONE/48c9b251-a792-4cc2-87f0-37ae5de466b2/?amount=1')
+                .then(res => res.json())
+                .then(res => {
+                    document.getElementById('count').innerHTML = res.value;
+                })
+            }
+            updateVisitCount();</script> 
+            <div id="counter">
+                <p>Dieser Seite sind bereits</p>
+                <h3 id="count">0</h3>
+                <p>zum Opfer gefallen.</p>
+            </div>
+        </div>
+            
+            <div id="footer">
+                <p>  ©  2021  FG CodingAG 9a</p>
+                <i class="fab fa-github-square"></i>
+            </div>
+        </div>
+
+        <canvas id="matrix"></canvas>
+        <script>
+            const canvas = document.querySelector("#matrix")
+            const ctx = canvas.getContext("2d")
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            function random(min, max){
+                return Math.floor(Math.random() * (max-min)) + min;
+
+            }
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = []
+            for (let y = 0; y < columns; y++){
+                drops[y] = canvas.height;
+            }
+            function draw(){
+                ctx.fillStyle = "#0002";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#0F0"
+                ctx.font = fontSize + "px";
+                for(let i=0; i<columns; i++){
+                    const text = String.fromCharCode(0x30A0 + random(0,96));
+                    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+                    if(drops[i]*fontSize > canvas.height && Math.random() >0.99){
+                        drops[i] =0;
+                    
+                    }
+                    drops[i]++;
+                }
+
+            }
+            setInterval(draw, 50);
+        </script>
+    </div>
+</body>
+</html>
+

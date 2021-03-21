@@ -1,0 +1,28 @@
+html {
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+#header{
+    size: 50%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+#footer{
+    position: relative;
+    top: 40vh;
+    
+}
+
+
+#video{
+    height: 400px;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+}
